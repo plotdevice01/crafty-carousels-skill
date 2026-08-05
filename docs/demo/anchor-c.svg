@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
+  <title id="title">Crafty Carousels demo anchor C</title>
+  <desc id="desc">Split cover reading Stop generating the whole carousel at once with three approved-direction cards.</desc>
+  <rect width="1080" height="1350" fill="#F5F0E8"/>
+  <rect width="540" height="1350" fill="#FF5A36"/>
+  <text x="50" y="120" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="900" fill="#102A43">CRAFTY • DEMO</text>
+  <text x="50" y="310" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" fill="#102A43">
+    <tspan x="50" dy="0">STOP</tspan>
+    <tspan x="50" dy="100">GENERATING</tspan>
+    <tspan x="50" dy="100">THE WHOLE</tspan>
+    <tspan x="50" dy="100">CAROUSEL</tspan>
+    <tspan x="50" dy="100">AT ONCE</tspan>
+  </text>
+  <g transform="translate(570 225)">
+    <rect x="0" y="0" width="440" height="250" rx="28" fill="#102A43"/>
+    <text x="45" y="85" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" fill="#F5F0E8">01 • COPY</text>
+    <text x="45" y="150" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#F5F0E8"><tspan x="45">Freeze exact</tspan><tspan x="45" dy="50">words</tspan></text>
+    <rect x="0" y="315" width="440" height="250" rx="28" fill="#FF5A36"/>
+    <text x="45" y="400" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" fill="#102A43">02 • ANCHOR</text>
+    <text x="45" y="465" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#102A43"><tspan x="45">Approve one</tspan><tspan x="45" dy="50">system</tspan></text>
+    <rect x="0" y="630" width="440" height="250" rx="28" fill="#102A43"/>
+    <text x="45" y="715" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" fill="#F5F0E8">03 • BUILD</text>
+    <text x="45" y="780" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#F5F0E8"><tspan x="45">One slide at</tspan><tspan x="45" dy="50">a time</tspan></text>
+  </g>
+</svg>
