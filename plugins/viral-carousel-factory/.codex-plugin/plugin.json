@@ -1,0 +1,23 @@
+{
+  "name": "viral-carousel-factory",
+  "version": "0.1.0",
+  "description": "Build governed, reference-first social carousels from approved brand, voice, evidence, and image inputs.",
+  "author": {
+    "name": "Aaron Thomas"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Viral Carousel Factory",
+    "shortDescription": "Build governed social carousel packages.",
+    "longDescription": "Create Instagram and LinkedIn carousel packages with guided client intake, copy approval, a reference-first visual anchor, one-slide-at-a-time image production, accessibility, rights controls, and release QA.",
+    "developerName": "Aaron Thomas",
+    "category": "Productivity",
+    "capabilities": [
+      "Guided client brand and rights intake",
+      "Carousel strategy and exact copy",
+      "Reference-first AI image production",
+      "Release validation and measurement records"
+    ],
+    "defaultPrompt": "Use Viral Carousel Factory to onboard a client or build one governed carousel from approved evidence, brand assets, voice samples, people, and visual references."
+  }
+}

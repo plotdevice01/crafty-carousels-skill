@@ -1,0 +1,20 @@
+{
+  "name": "viral-carousel-factory",
+  "interface": {
+    "displayName": "Viral Carousel Factory"
+  },
+  "plugins": [
+    {
+      "name": "viral-carousel-factory",
+      "source": {
+        "source": "local",
+        "path": "./plugins/viral-carousel-factory"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
