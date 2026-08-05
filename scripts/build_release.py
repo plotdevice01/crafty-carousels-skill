@@ -7,14 +7,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "viral-carousel-factory"
+PLUGIN = ROOT / "plugins" / "crafty-carousels"
 DIST = ROOT / "dist"
 
 
 def main() -> int:
     manifest = json.loads((PLUGIN / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     version = manifest["version"]
-    archive = DIST / f"viral-carousel-factory-v{version}.zip"
+    archive = DIST / f"crafty-carousels-skill-v{version}.zip"
     DIST.mkdir(exist_ok=True)
     if archive.exists():
         archive.unlink()
@@ -30,12 +30,12 @@ def main() -> int:
             bundle.writestr(info, path.read_bytes())
 
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-    receipt = DIST / f"viral-carousel-factory-v{version}.sha256"
+    receipt = DIST / f"crafty-carousels-skill-v{version}.sha256"
     receipt.write_text(f"{digest}  {archive.name}\n", encoding="utf-8", newline="\n")
 
     with zipfile.ZipFile(archive) as bundle:
         assert ".codex-plugin/plugin.json" in bundle.namelist()
-        assert "skills/viral-carousel-factory/SKILL.md" in bundle.namelist()
+        assert "skills/crafty-carousels/SKILL.md" in bundle.namelist()
         assert not any("__pycache__" in name or name.endswith(".pyc") for name in bundle.namelist())
     print(f"archive={archive}")
     print(f"sha256={digest}")

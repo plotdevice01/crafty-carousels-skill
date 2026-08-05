@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "viral-carousel-factory"
-SKILL = PLUGIN / "skills" / "viral-carousel-factory"
+PLUGIN = ROOT / "plugins" / "crafty-carousels"
+SKILL = PLUGIN / "skills" / "crafty-carousels"
 MANIFEST = PLUGIN / ".codex-plugin" / "plugin.json"
 MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
 REQUIRED = (
@@ -21,6 +21,9 @@ REQUIRED = (
     "references/governance-measurement.md",
     "references/sources.md",
     "scripts/new_carousel_project.py",
+    "assets/client-workspace/_templates/carousel-run/run.json",
+    "assets/client-workspace/_templates/carousel-run/visual-brief.md",
+    "assets/client-workspace/_templates/carousel-run/qa.md",
     "assets/client-workspace/setup/client-intake.md",
     "assets/client-workspace/_shared/brand.md",
     "assets/client-workspace/_shared/voice.md",
@@ -33,14 +36,15 @@ REQUIRED = (
 def main() -> int:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["name"] == "viral-carousel-factory"
+    assert manifest["name"] == "crafty-carousels"
     assert manifest["version"] == version
     assert manifest["skills"] == "./skills/"
 
     marketplace = json.loads(MARKETPLACE.read_text(encoding="utf-8"))
+    assert marketplace["name"] == "crafty-carousels-skill"
     entry = marketplace["plugins"][0]
     assert entry["name"] == manifest["name"]
-    assert entry["source"]["path"] == "./plugins/viral-carousel-factory"
+    assert entry["source"]["path"] == "./plugins/crafty-carousels"
 
     missing = [relative for relative in REQUIRED if not (SKILL / relative).is_file()]
     assert not missing, f"Missing skill files: {missing}"

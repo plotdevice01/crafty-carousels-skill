@@ -1,0 +1,4 @@
+interface:
+  display_name: "Crafty Carousels Skill"
+  short_description: "Build governed, reference-first social carousels"
+  default_prompt: "Use $crafty-carousels to build a client carousel from approved evidence, copy, brand assets, and visual references."

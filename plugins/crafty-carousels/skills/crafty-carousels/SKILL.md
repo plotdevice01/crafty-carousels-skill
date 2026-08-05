@@ -1,9 +1,9 @@
 ---
-name: viral-carousel-factory
+name: crafty-carousels
 description: Build governed, reference-first Instagram and LinkedIn carousels from approved client evidence, brand inputs, exact copy, and visual references. Use for carousel strategy, slide copy, GPT Image production, accessibility, QA, and release-ready delivery packages.
 ---
 
-# Viral Carousel Factory
+# Crafty Carousels Skill
 
 Create high-retention carousel packages without promising virality. The repeating unit is one client carousel run inside the bundled ICM Pipeline.
 
@@ -22,6 +22,7 @@ Create high-retention carousel packages without promising virality. The repeatin
 - The bundled run records control scope and status. They also control approvals. Chief of Staff may coordinate them when installed, but the factory does not depend on Chief. Do not publish or schedule without explicit authorization. The same rule applies to media buying, external delivery and permission changes.
 - AI Sloppy Copy is mandatory for carousel copy, caption, alt text, and client-facing notes. Preserve `Hook -> Value -> CTA`, then run the installed checker and repair up to two times. If AI Sloppy Copy is unavailable, drafting may continue, but final copy approval and release must stop with the dependency recorded as a blocker.
 - Use the installed image generation skill for GPT Image 2 or the current approved image model. Follow its current instructions rather than embedding an API wrapper here.
+- Treat `references/production-system.md` as a versioned contract. Every run records its SHA-256. Stop production when the recorded hash differs from the installed file; reread the current rules and repeat the affected human approvals.
 - Treat supplied examples as references, not assets to redistribute. Record the visual job of each reference and confirm usage rights before client delivery.
 - Virality is an outcome to test, not a claim to make. Design for attention and continuation. Aim for a useful payoff, saves and shares. Measure qualified action.
 
@@ -53,6 +54,8 @@ Do not write proof claims from an inspiration image. A visual reference is not e
 
 ### 2. Strategy and copy
 
+Choose and record one copy mode before design: `exact-source` for visual-only comparisons or `approved-draft` for copy-and-design work. Never rewrite, shorten, expand, or add explainer text in `exact-source` mode. Freeze approved `copy.md` with SHA-256 before image production. Select the narrative format that fits the insight: comparison, tutorial, native personal lesson, story arc, or an explicitly approved custom format.
+
 Write the full carousel before generating images. Default to the smallest slide count that carries the idea. Use eight when the idea benefits from the complete sequence:
 
 1. Hook
@@ -72,9 +75,9 @@ Stop for human approval of strategy and exact copy before generating a full caro
 
 ### 3. Anchor slide
 
-Select two to four references and assign each one job. Generate three distinct cover candidates with the exact approved copy. Compare them at thumbnail size. Select one direction. Refine it until hierarchy and brand fit pass. Legibility and curiosity must pass too.
+Select two to four references and assign each one job. Generate exactly three distinct cover candidates with the exact approved copy. Do not substitute color swaps for different compositions. Compare all three at 320 pixels wide. Select one direction. Refine it until hierarchy and brand fit pass. Legibility and curiosity must pass too.
 
-The approved cover is the visual anchor. Do not generate the remaining carousel until the human gate records anchor approval.
+The approved cover is the visual anchor. Record all three files, their SHA-256 values, the selected candidate, and the SHA-256 of `visual-brief.md`. Do not generate the remaining carousel until the human gate records anchor approval and validation passes.
 
 ### 4. Slide production
 
@@ -87,6 +90,12 @@ Generate or edit one slide at a time from the approved anchor. For each slide, p
 - fixed palette, typography behavior, spacing, numbering, and safe-zone rules.
 
 After each result, inspect the image. Reject misspelled or missing text. Reject weak contrast and style drift. Reject unsafe cropping or repeated visuals. Reject false logos and unsupported depictions. Fix the current slide before moving on.
+
+Use one locked, wide, heavy, high-x-height type family for headline, supporting copy, and CTA unless the approved brand system explicitly requires another family. On 1080 by 1350 slides, enforce minimum rendered sizes of 68 pixels for headlines, 40 pixels for supporting copy, and 48 pixels for CTAs, all at weight 800 or heavier. Inspect at 320 pixels wide. Never place text on a glow, flare, colored haze, gradient hotspot, face, head, body, hand, or primary object. Keep CTAs above bottom crop and interface-safe zones. Do not add shapes, arrows, symbols, fake UI, stray characters, or explainer copy that is absent from the approved copy.
+
+For a personal brand requiring strong identity fidelity, prefer an approved real-photo composite over a generated avatar. Use the image model for the background, environment, lighting plate, or non-identity elements, then preserve the approved person's real face and body asset. Record `approved-real-photo-composite`, `approved-ai-likeness`, or `not-applicable` in the run before production.
+
+When the operator approves the deck except for named slides, edit only those slides. Do not regenerate approved slides.
 
 Do not ask the image model for a contact sheet as the final output. Final slides must be separate files with identical dimensions.
 

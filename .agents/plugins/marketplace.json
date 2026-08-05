@@ -1,14 +1,14 @@
 {
-  "name": "viral-carousel-factory",
+  "name": "crafty-carousels-skill",
   "interface": {
-    "displayName": "Viral Carousel Factory"
+    "displayName": "Crafty Carousels Skill"
   },
   "plugins": [
     {
-      "name": "viral-carousel-factory",
+      "name": "crafty-carousels",
       "source": {
         "source": "local",
-        "path": "./plugins/viral-carousel-factory"
+        "path": "./plugins/crafty-carousels"
       },
       "policy": {
         "installation": "AVAILABLE",

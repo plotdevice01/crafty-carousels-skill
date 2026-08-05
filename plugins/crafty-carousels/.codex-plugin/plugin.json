@@ -1,0 +1,28 @@
+{
+  "name": "crafty-carousels",
+  "version": "0.3.0",
+  "description": "Build governed, reference-first social carousels from approved brand, voice, evidence, and image inputs.",
+  "author": {
+    "name": "Aaron Thomas"
+  },
+  "homepage": "https://github.com/plotdevice01/crafty-carousels-skill",
+  "repository": "https://github.com/plotdevice01/crafty-carousels-skill",
+  "license": "MIT",
+  "keywords": ["carousel", "social-media", "creative-production", "gpt-image"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Crafty Carousels Skill",
+    "shortDescription": "Build governed social carousel packages.",
+    "longDescription": "Create Instagram and LinkedIn carousel packages with guided client intake, copy approval, three required anchor candidates, locked mobile typography, one-slide-at-a-time image production, accessibility, rights controls, and release QA.",
+    "developerName": "Aaron Thomas",
+    "category": "Productivity",
+    "capabilities": [
+      "Guided client brand and rights intake",
+      "Carousel strategy and exact copy",
+      "Three-anchor reference-first AI image production",
+      "Locked mobile readability and exact-copy gates",
+      "Release validation and measurement records"
+    ],
+    "defaultPrompt": "Use Crafty Carousels Skill to onboard a client or build one approved Instagram or LinkedIn carousel."
+  }
+}
