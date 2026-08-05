@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 - 2026-08-05
+
+- Added Claude Code marketplace and plugin manifests so the documented install works.
+
 ## 0.6.0 - 2026-08-05
 
 - Added a verified, one-way Brand Voice Factory package importer.
