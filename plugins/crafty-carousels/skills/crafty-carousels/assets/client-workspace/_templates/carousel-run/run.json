@@ -6,6 +6,8 @@
   "status": "intake",
   "goal": "UNKNOWN",
   "audience": "UNKNOWN",
+  "content_class": "UNKNOWN",
+  "hook_research_format": "UNKNOWN",
   "idea": "UNKNOWN",
   "narrative_format": "UNKNOWN",
   "ruleset": {
@@ -16,6 +18,10 @@
     "mode": "UNKNOWN",
     "source_copy_sha256": "UNKNOWN",
     "approved_copy_sha256": "UNKNOWN"
+  },
+  "hook_library": {
+    "selected_record_ids": [],
+    "selection_reason": "UNKNOWN"
   },
   "typography": {
     "family": "UNKNOWN",

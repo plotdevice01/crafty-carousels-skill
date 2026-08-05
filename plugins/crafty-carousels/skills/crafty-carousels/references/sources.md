@@ -1,6 +1,6 @@
 # Source register
 
-Checked 2026-08-04 unless noted. Recheck mutable platform and model facts before release.
+Checked 2026-08-05 unless noted. Recheck mutable platform and model facts before release.
 
 ## Workflow sources
 
@@ -20,8 +20,19 @@ These sources support the copy-first and anchor-first workflow. They also suppor
 - FTC social media disclosure guidance: https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers
 - OpenAI GPT Image 2 model page: https://developers.openai.com/api/docs/models/gpt-image-2
 
+## Hook-format research sources
+
+- Purchased TikTok Hook Library offline snapshot, imported 2026-08-05 from owner-provided Gumroad subscription access.
+- Purchased Personal Brand Launch scripts, hooks, and CTA library offline snapshot, imported 2026-08-05 from owner-provided Gumroad subscription access.
+- TikTok for Business 2026 Creative Starter Pack: https://ads.tiktok.com/business/library/AUNZ_Creative_Starter_Pack_TakeItToTikTok.pdf
+- TikTok creative advertising guide: https://ads.tiktok.com/business/en/guides/what-is-ad-creative-guide
+- Instagram carousel publishing behavior: https://www.facebook.com/help/instagram/269314186824048
+- LinkedIn document-post guidance: https://www.linkedin.com/help/linkedin/answer/a519831
+
+TikTok's official guidance treats sound, motion, people, and the first seconds as video-native creative levers. Instagram and LinkedIn carousel or document posts are sequential static surfaces. The skill therefore stores format fit as editorial routing: `video`, `image_carousel`, or both. This is an inference from platform mechanics, not proof that one format will outperform another.
+
 ## User-supplied working sources
 
-The original build also reviewed a carousel Bible PDF and two Markdown guides. It reviewed design examples plus a ten-image production guide. Their reusable principles are represented in this skill. The source files are not bundled because they may contain creator-specific material or client material. Redistribution restrictions may apply too.
+The original build also reviewed a carousel Bible PDF and two Markdown guides. It reviewed design examples plus a ten-image production guide. Their reusable principles are represented in this skill. The paid hook, script, and CTA datasets required by production are bundled as structured offline records; the runtime never reopens their original Notion pages.
 
 User-supplied claims that conflict with current official documentation are labeled as heuristics or require a live route check.

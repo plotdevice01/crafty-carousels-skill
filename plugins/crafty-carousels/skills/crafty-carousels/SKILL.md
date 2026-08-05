@@ -11,9 +11,11 @@ Create high-retention carousel packages without promising virality. The repeatin
 
 1. Read `references/production-system.md` for structure, copy, reference selection, and image production.
 2. Read `references/client-intake.md` when starting a client workspace or updating its brand, voice, people, or asset library.
-3. Read `references/platform-delivery.md` for the chosen publishing route. Recheck current platform facts before release.
-4. Read `references/governance-measurement.md` when claims, endorsements, regulated topics, client assets, or performance evaluation are involved.
-5. Read `references/sources.md` only when provenance or source conflicts matter.
+3. Read `references/hook-library.md` when identifying the client content class or researching and selecting hook patterns.
+4. Read `references/copy-library.md` when selecting an installed script framework or CTA.
+5. Read `references/platform-delivery.md` for the chosen publishing route. Recheck current platform facts before release.
+6. Read `references/governance-measurement.md` when claims, endorsements, regulated topics, client assets, or performance evaluation are involved.
+7. Read `references/sources.md` only when provenance or source conflicts matter.
 
 ## Operating contract
 
@@ -48,13 +50,15 @@ Before the first run, complete `setup/client-intake.md`. Save stable visual rule
 
 ### 1. Intake and evidence
 
-Run the guided client intake one unanswered blocking question at a time. Define one audience and one desired action. Record one sharp idea plus the approved offer. Add the platform route and claim sources. Then record the brand files plus approved voice samples. Record the people who may appear and the rights-cleared visual references. Assign each reference a visual job.
+Run the guided client intake one unanswered blocking question at a time. Define one audience and one desired action. Ask whether this campaign is `business`, `ugc_creator`, or `influencer` content and record exactly one class. Ask whether hook research should use `image_carousel`, `video_adaptable`, or `both`; Crafty still delivers a carousel, so video-first hooks must be adapted and re-approved. Record one sharp idea plus the approved offer. Add the platform route and claim sources. Then record the brand files plus approved voice samples. Record the people who may appear and the rights-cleared visual references. Assign each reference a visual job.
 
 Do not write proof claims from an inspiration image. A visual reference is not evidence.
 
 ### 2. Strategy and copy
 
 Choose and record one copy mode before design: `exact-source` for visual-only comparisons or `approved-draft` for copy-and-design work. Never rewrite, shorten, expand, or add explainer text in `exact-source` mode. Freeze approved `copy.md` with SHA-256 before image production. Select the narrative format that fits the insight: comparison, tutorial, native personal lesson, story arc, or an explicitly approved custom format.
+
+For `approved-draft`, query only the recorded content class and hook-research format in the bundled 751-record source library. Show three to five patterns with source-supplied examples when available, stable IDs, and format fit. Never invent an example when the source did not provide one. Adapt with approved client evidence and voice, then record the selected IDs. When useful, query the installed 7-script and 39-CTA library; do not recreate those records from memory. Never describe a library pattern as currently trending without current research evidence. For `exact-source`, preserve the supplied hook and do not substitute a library entry.
 
 Write the full carousel before generating images. Default to the smallest slide count that carries the idea. Use eight when the idea benefits from the complete sequence:
 

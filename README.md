@@ -53,6 +53,8 @@ The repeating unit is one client carousel run inside an ICM Pipeline. Stable bra
 
 - One private workspace per client.
 - One audience, goal, action, and platform route before production.
+- One campaign content class: Business, UGC Creator, or Influencer.
+- One hook-research pool: image-carousel-first, video-first adapted to carousel, or both.
 - Named workspace owner plus authorized approver.
 - Versioned brand, voice, people, asset, claim, and release records.
 - Rights status for every logo, font, screenshot, testimonial, photo, and reference.
@@ -80,6 +82,20 @@ Additional controls:
 - Use one CTA tied to the approved campaign goal.
 - Run AI Sloppy Copy on slide copy, caption, alt text, and client-facing notes.
 - Preserve `Hook -> Value -> CTA` without inventing proof, urgency, keywords, or performance claims.
+
+#### Hook pattern library
+
+The skill retrieves hooks by campaign content class and format fit instead of mixing incompatible creator styles or forcing video-native hooks onto static covers:
+
+| Class | Use when | Library behavior |
+|---|---|---|
+| Business | The company, practice, product, service, or named expert is the authority | Filters all compatible source records by class and format fit |
+| UGC Creator | The content is a relatable demonstration, review, comparison, or experience | Filters all compatible source records by class and format fit |
+| Influencer | Personality, story, taste, or audience relationship drives attention | Filters all compatible source records by class and format fit |
+
+The local source library contains 751 source records: 300 paired hook/example records, 351 exact records with Category, Length, Sentiment, and Style, plus 100 exact Personal Brand Launch hook starters. Crafty also embeds 7 script frameworks and 39 CTAs. The operator sees three to five candidates, format fit, stable IDs, and examples when the source supplied them. The selected pattern is adapted only with approved client evidence and voice. The databases are offline ideation sources; they do not prove a hook is currently trending or guarantee performance.
+
+The purchased libraries are packaged inside the skill. Crafty Carousels does not open Notion, store Notion URLs, or require the original pages during client work.
 
 ### 3. Carousel frameworks
 

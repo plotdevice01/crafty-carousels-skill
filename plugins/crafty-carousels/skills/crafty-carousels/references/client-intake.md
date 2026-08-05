@@ -6,17 +6,21 @@ Run intake as a conversation. Ask one unanswered blocking question, save the ans
 
 1. Confirm the client name, workspace owner, authorized approver, and publishing accounts.
 2. Confirm the business goal, primary audience, offer, desired action, and intended platform route.
-3. Collect brand files and visual rules. Record exact paths plus rights for every file.
-4. Identify the speaker or brand voice. Collect only owner-approved samples. Record the speaker's authority, audience relationship, vocabulary, prohibited wording, and approval owner.
-5. Identify each person who may appear. Record whether the client owns or controls the source files. Record organic and paid permission separately. Record AI editing and AI generation reference permission separately too.
-6. Register claim evidence, testimonials, credentials, product views, screenshots, fonts, logos, reference images, and other production inputs.
-7. Confirm disclosures plus prohibited topics. Confirm legal or compliance review and accessibility needs. Confirm retention rules plus the success baseline and approval path.
+3. Ask which campaign content class applies: Business, UGC Creator, or Influencer. Record exactly one class; do not infer it from the industry.
+4. Ask whether hook research should use image-carousel-first hooks, video-first hooks adapted to a static cover, or both.
+5. Collect brand files and visual rules. Record exact paths plus rights for every file.
+6. Identify the speaker or brand voice. Collect only owner-approved samples. Record the speaker's authority, audience relationship, vocabulary, prohibited wording, and approval owner.
+7. Identify each person who may appear. Record whether the client owns or controls the source files. Record organic and paid permission separately. Record AI editing and AI generation reference permission separately too.
+8. Register claim evidence, testimonials, credentials, product views, screenshots, fonts, logos, reference images, and other production inputs.
+9. Confirm disclosures plus prohibited topics. Confirm legal or compliance review and accessibility needs. Confirm retention rules plus the success baseline and approval path.
 
 ## Minimum first-run gate
 
 Do not approve intake until the workspace has:
 
 - one audience plus one goal;
+- one content class: `business`, `ugc_creator`, or `influencer`;
+- one hook-research format: `image_carousel`, `video_adaptable`, or `both`;
 - one action plus one platform route;
 - approved brand and voice controls or an explicit temporary direction;
 - an asset register with rights status for every file that may be used;
