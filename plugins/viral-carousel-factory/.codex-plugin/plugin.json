@@ -1,6 +1,6 @@
 {
   "name": "viral-carousel-factory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build governed, reference-first social carousels from approved brand, voice, evidence, and image inputs.",
   "author": {
     "name": "Aaron Thomas"
@@ -18,6 +18,6 @@
       "Reference-first AI image production",
       "Release validation and measurement records"
     ],
-    "defaultPrompt": "Use Viral Carousel Factory to onboard a client or build one governed carousel from approved evidence, brand assets, voice samples, people, and visual references."
+    "defaultPrompt": "Use Viral Carousel Factory to onboard a client or build one approved Instagram or LinkedIn carousel."
   }
 }

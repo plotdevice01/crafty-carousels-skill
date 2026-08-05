@@ -25,7 +25,7 @@ Client records and media are not bundled. The plugin stamps a separate workspace
 ### Codex CLI
 
 ```powershell
-codex plugin marketplace add plotdevice01/viral-carousel-factory --ref v0.1.0
+codex plugin marketplace add plotdevice01/viral-carousel-factory --ref v0.1.1
 ```
 
 Then refresh the plugin list, install `viral-carousel-factory`, and start a new task. Pinning the release tag keeps every teammate on the same package.
