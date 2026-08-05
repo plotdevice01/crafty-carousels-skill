@@ -28,6 +28,18 @@ Ask one unanswered blocking question at a time. Save the answer here before cont
 - Organic, paid, partnership, or reuse plan: UNKNOWN
 - Baseline and primary outcome: UNKNOWN
 
+## Content class
+
+Which class best describes this campaign? Choose one. The same client may choose a different class for another campaign.
+
+- Content class (`business`, `ugc_creator`, or `influencer`): UNKNOWN
+- Why this class fits the campaign: UNKNOWN
+- Human-reviewed hook examples shown during selection: UNKNOWN
+- Hook research format (`image_carousel`, `video_adaptable`, or `both`): UNKNOWN
+- Why this hook format pool fits: UNKNOWN
+
+`business` centers the company, professional practice, offer, product, service, or named business expert. `ugc_creator` centers a relatable demonstration, review, comparison, or experience. `influencer` centers the creator's personality, point of view, story, taste, or audience relationship.
+
 ## Brand look
 
 - Brand package path: UNKNOWN
@@ -53,6 +65,7 @@ Ask one unanswered blocking question at a time. Save the answer here before cont
 - Prohibited terms or claims: UNKNOWN
 - Proof and citation style: UNKNOWN
 - CTA boundaries: UNKNOWN
+- Approved hook-library record IDs or `EXACT_SOURCE`: UNKNOWN
 
 ## People and image library
 

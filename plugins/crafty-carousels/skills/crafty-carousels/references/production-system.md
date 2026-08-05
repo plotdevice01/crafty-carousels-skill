@@ -97,6 +97,8 @@ Readability outranks decoration, image novelty, and fitting more copy onto a sli
 ## Copy rules
 
 - Declare `exact-source` or `approved-draft` before design. In `exact-source` mode, preserve every approved word and punctuation mark. Do not improvise hooks, explanations, labels, summaries, or CTA copy.
+- Record one campaign content class: `business`, `ugc_creator`, or `influencer`. Record a hook-research pool: `image_carousel`, `video_adaptable`, or `both`. In `approved-draft` mode, query only that class and pool, display source-supplied examples when available, and record selected hook IDs. Video-first hooks require an explicit static-cover adaptation and renewed copy approval. In `exact-source` mode, do not replace supplied copy with a library pattern.
+- Treat hook-library entries as reusable patterns, not proof of current trend status or guaranteed performance.
 - Freeze approved `copy.md` with SHA-256. Stop production when the file hash changes after approval.
 - Write all slide copy before image production.
 - Draft at least three materially different hooks. Use five when the first batch is weak or the cover carries unusual commercial risk.

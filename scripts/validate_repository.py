@@ -16,11 +16,19 @@ REQUIRED = (
     "SKILL.md",
     "agents/openai.yaml",
     "references/client-intake.md",
+    "references/hook-library.md",
+    "references/copy-library.md",
     "references/production-system.md",
     "references/platform-delivery.md",
     "references/governance-measurement.md",
     "references/sources.md",
     "scripts/new_carousel_project.py",
+    "scripts/hook_library.py",
+    "scripts/copy_library.py",
+    "assets/hook-library/viral-hooks-300.json",
+    "assets/hook-library/notion-tiktok-hooks-351.json",
+    "assets/hook-library/personal-brand-hooks-100.json",
+    "assets/copy-library/scripts-7-ctas-39.json",
     "assets/client-workspace/_templates/carousel-run/run.json",
     "assets/client-workspace/_templates/carousel-run/visual-brief.md",
     "assets/client-workspace/_templates/carousel-run/qa.md",
@@ -54,7 +62,11 @@ def main() -> int:
         if path.is_file() and path.suffix.lower() in {".md", ".py", ".json", ".yaml", ".csv"}:
             if "http://" in path.read_text(encoding="utf-8") or "https://" in path.read_text(encoding="utf-8"):
                 urls.append(path.relative_to(SKILL).as_posix())
-    assert urls == ["references/sources.md"], f"Runtime knowledge depends on unexpected URLs: {urls}"
+    allowed_provenance_urls = {"references/sources.md"}
+    assert set(urls) == allowed_provenance_urls, f"Runtime knowledge depends on unexpected URLs: {urls}"
+    for path in SKILL.rglob("*"):
+        if path.is_file() and path.suffix.lower() in {".md", ".py", ".json", ".yaml", ".csv"}:
+            assert "notion.site" not in path.read_text(encoding="utf-8").casefold(), f"Notion runtime dependency: {path}"
 
     script = SKILL / "scripts" / "new_carousel_project.py"
     result = subprocess.run(
@@ -64,6 +76,24 @@ def main() -> int:
         text=True,
     )
     assert "self_test=PASS" in result.stdout
+
+    hook_script = SKILL / "scripts" / "hook_library.py"
+    hook_result = subprocess.run(
+        [sys.executable, str(hook_script), "--content-class", "business", "--self-test"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "self_test=PASS" in hook_result.stdout
+
+    copy_script = SKILL / "scripts" / "copy_library.py"
+    copy_result = subprocess.run(
+        [sys.executable, str(copy_script), "--type", "script", "--self-test"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "self_test=PASS" in copy_result.stdout
 
     with tempfile.TemporaryDirectory() as folder:
         workspace = Path(folder) / "workspace"

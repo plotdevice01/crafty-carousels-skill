@@ -14,7 +14,8 @@ SKILL_ROOT = Path(__file__).resolve().parent.parent
 WORKSPACE_TEMPLATE = SKILL_ROOT / "assets" / "client-workspace"
 RUN_TEMPLATE = WORKSPACE_TEMPLATE / "_templates" / "carousel-run"
 PRODUCTION_SYSTEM = SKILL_ROOT / "references" / "production-system.md"
-RULESET_VERSION = "2026-08-05.1"
+HOOK_LIBRARY_DIR = SKILL_ROOT / "assets" / "hook-library"
+RULESET_VERSION = "2026-08-05.3"
 MIN_TYPE = {
     "headline_min_px": 68,
     "supporting_min_px": 40,
@@ -22,6 +23,8 @@ MIN_TYPE = {
     "thumbnail_test_width_px": 320,
 }
 NARRATIVE_FORMATS = ("comparison", "tutorial", "native", "story-arc", "custom-approved")
+CONTENT_CLASSES = ("business", "ugc_creator", "influencer")
+HOOK_RESEARCH_FORMATS = ("image_carousel", "video_adaptable", "both")
 SAFE_ZONE_MINIMUMS = {"top": 180, "bottom": 180, "left": 50, "right": 120}
 ROUTES = {
     "instagram-native": (1080, 1440),
@@ -42,6 +45,13 @@ TEXT_SUFFIXES = {".md", ".csv", ".json", ".txt"}
 
 def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_hook_records() -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for path in sorted(HOOK_LIBRARY_DIR.glob("*.json")):
+        records.extend(json.loads(path.read_text(encoding="utf-8"))["records"])
+    return records
 
 
 def run_file(run: Path, value: object) -> Path | None:
@@ -237,6 +247,33 @@ def validate_run(run: Path) -> list[str]:
     if status in ("copy_draft", "anchor_review", "production", "release_review", "release_ready", "published"):
         if not approvals.get("intake"):
             errors.append("Copy and later states require intake approval")
+        if manifest.get("content_class") not in CONTENT_CLASSES:
+            errors.append(f"Copy and later states require content_class as one of {CONTENT_CLASSES}")
+        if manifest.get("hook_research_format") not in HOOK_RESEARCH_FORMATS:
+            errors.append(f"Copy and later states require hook_research_format as one of {HOOK_RESEARCH_FORMATS}")
+
+        hook_selection = manifest.get("hook_library", {})
+        selected_ids = hook_selection.get("selected_record_ids")
+        if not isinstance(selected_ids, list):
+            errors.append("hook_library.selected_record_ids must be a list")
+        else:
+            library_records = load_hook_records()
+            selected_class = manifest.get("content_class")
+            selected_format = manifest.get("hook_research_format")
+            allowed_formats = {
+                "image_carousel": {"image_carousel"},
+                "video_adaptable": {"video"},
+                "both": {"video", "image_carousel"},
+            }.get(selected_format, set())
+            valid_ids = {
+                record["id"]
+                for record in library_records
+                if selected_class in record.get("content_classes", [record.get("content_class")])
+                and allowed_formats.intersection(record.get("format_fit", []))
+            }
+            invalid_ids = [record_id for record_id in selected_ids if record_id not in valid_ids]
+            if invalid_ids:
+                errors.append(f"Hook IDs do not belong to the selected content class: {invalid_ids}")
 
     if status in ("production", "release_review", "release_ready", "published"):
         if not approvals.get("strategy_copy") or not approvals.get("anchor"):
@@ -246,6 +283,8 @@ def validate_run(run: Path) -> list[str]:
         mode = copy_policy.get("mode")
         if mode not in ("exact-source", "approved-draft"):
             errors.append("Production requires copy_policy.mode as exact-source or approved-draft")
+        if mode == "approved-draft" and manifest.get("hook_library", {}).get("selection_reason") in (None, "", "UNKNOWN"):
+            errors.append("Approved-draft production requires a hook selection reason")
         copy_path = run / "copy.md"
         copy_hash = sha256_file(copy_path) if copy_path.is_file() else None
         if copy_policy.get("approved_copy_sha256") != copy_hash:
@@ -378,11 +417,23 @@ def self_test() -> None:
         ]
         manifest_path = run / "run.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest["status"] = "copy_draft"
+        manifest["approvals"]["intake"] = True
+        manifest["content_class"] = "business"
+        manifest["hook_research_format"] = "image_carousel"
+        manifest["hook_library"]["selected_record_ids"] = ["notion-351-001"]
+        manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8", newline="\n")
+        assert not validate_run(run)
+
         manifest["status"] = "production"
+        manifest["content_class"] = "UNKNOWN"
+        manifest["hook_research_format"] = "UNKNOWN"
         manifest["approvals"].update({"intake": True, "strategy_copy": True, "anchor": True})
         manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8", newline="\n")
         errors = validate_run(run)
         assert any("copy_policy.mode" in error for error in errors)
+        assert any("content_class" in error for error in errors)
+        assert any("hook_research_format" in error for error in errors)
         assert any("narrative_format" in error for error in errors)
         assert any("Anchor candidate A" in error for error in errors)
         assert any("typography family" in error for error in errors)

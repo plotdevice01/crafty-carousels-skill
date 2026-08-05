@@ -12,6 +12,9 @@
 - Prohibited terms, expressions, and claims: UNKNOWN
 - Proof and citation style: UNKNOWN
 - CTA boundaries: UNKNOWN
+- Default content class or `CAMPAIGN_SPECIFIC`: UNKNOWN
+- Approved hook patterns and record IDs: UNKNOWN
+- Rejected hook patterns and reasons: UNKNOWN
 - AI Sloppy Copy dependency and checker path: UNKNOWN
 
 Use only approved samples. Do not invent opinions, memories, errors, slang, personal details, or sensory claims to imitate a person.

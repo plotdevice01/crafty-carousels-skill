@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.5.0 - Unreleased
+
+- Embedded the paid TikTok Hook Library as a 351-record offline snapshot with exact source Category, Length, Sentiment, Style, and stable offline record IDs.
+- Embedded the paid Personal Brand Launch library: 7 script frameworks, 100 hook starters, and 39 CTAs with exact source wording.
+- Added hook-format routing for video, image carousel, and cross-format patterns across the complete 751-record local hook library.
+- Added client intake and run validation for `image_carousel`, `video_adaptable`, or `both` research pools.
+- Removed Notion URLs and runtime page dependencies. Authorized local and team use is recorded; public redistribution of paid source datasets remains separately gated.
+
+## 0.4.0 - 2026-08-05
+
+- Added a local 300-record intro-hook database with 100 paired patterns and examples for each content class: Business, UGC Creator, and Influencer.
+- Added required campaign content-class intake and run-manifest controls.
+- Added deterministic category and keyword lookup with a 300-record self-test.
+- Added provenance and redistribution-rights controls for the user-supplied source PDF.
+
 ## 0.3.0 - 2026-08-05
 
 - Renamed the product to Crafty Carousels Skill.

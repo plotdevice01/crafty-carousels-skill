@@ -14,4 +14,4 @@ Complete the client intake and shared brand controls. Complete the voice, people
 
 ## Human check
 
-Confirm scope and intended audience. Confirm the idea, offer, route, and source packet. Confirm brand rules plus voice authority. Confirm likeness permissions and reference rights. Record intake approval before copy work proceeds.
+Confirm scope and intended audience. Confirm the idea, offer, route, content class, hook-research format, and source packet. Confirm brand rules plus voice authority. Confirm likeness permissions and reference rights. Record intake approval before copy work proceeds.

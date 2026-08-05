@@ -2,7 +2,7 @@
 
 ## Inputs
 
-Approved intake, evidence, brand voice, and production-system reference.
+Approved intake, evidence, brand voice, production-system reference, recorded content class, and hook-research format. Read `references/hook-library.md` for approved-draft hook selection.
 
 ## Process
 
