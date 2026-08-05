@@ -261,7 +261,7 @@ Crafty Carousels uses the installed image generation capability for GPT Image 2 
 ### Codex or ChatGPT desktop
 
 ```powershell
-codex plugin marketplace add plotdevice01/crafty-carousels-skill --ref v0.3.0
+codex plugin marketplace add plotdevice01/crafty-carousels-skill --ref v0.5.0
 codex plugin add crafty-carousels@crafty-carousels-skill
 ```
 
@@ -303,8 +303,8 @@ Mutable platform limits still require release-time verification. The repository 
 
 ## Versioning
 
-- **Release tag:** the package teammates install, such as `v0.3.0`.
-- **Plugin manifest:** host-facing package metadata, such as `0.3.0`.
+- **Release tag:** the package teammates install, such as `v0.5.0`.
+- **Plugin manifest:** host-facing package metadata, such as `0.5.0`.
 - **Skill workflow:** the production contract and client workspace templates inside that release.
 
 See [CHANGELOG.md](CHANGELOG.md) for release history.
