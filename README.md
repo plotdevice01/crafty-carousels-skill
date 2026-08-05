@@ -54,11 +54,11 @@ The repeating unit is one client carousel run inside an ICM Pipeline. Stable bra
 - One private workspace per client.
 - One audience, goal, action, and platform route before production.
 - One campaign content class: Business, UGC Creator, or Influencer.
-- One hook-research pool: image-carousel-first, video-first adapted to carousel, or both.
+- One hook-research pool: image-carousel-first; video-first adapted to carousel; or both.
 - Named workspace owner plus authorized approver.
 - Versioned brand, voice, people, asset, claim, and release records.
 - Rights status for every logo, font, screenshot, testimonial, photo, and reference.
-- Separate permission decisions for organic use, paid use, AI editing, and AI likeness generation.
+- Separate permission decisions for organic use and paid use. AI editing and AI likeness generation remain separate too.
 - Client media stays in the private workspace. It is never bundled into this public plugin.
 - Missing material decisions become `UNKNOWN` or `HOLD`. They are never filled from another client or model memory.
 
@@ -93,9 +93,7 @@ The skill retrieves hooks by campaign content class and format fit instead of mi
 | UGC Creator | The content is a relatable demonstration, review, comparison, or experience | Filters all compatible source records by class and format fit |
 | Influencer | Personality, story, taste, or audience relationship drives attention | Filters all compatible source records by class and format fit |
 
-The local source library contains 751 source records: 300 paired hook/example records, 351 exact records with Category, Length, Sentiment, and Style, plus 100 exact Personal Brand Launch hook starters. Crafty also embeds 7 script frameworks and 39 CTAs. The operator sees three to five candidates, format fit, stable IDs, and examples when the source supplied them. The selected pattern is adapted only with approved client evidence and voice. The databases are offline ideation sources; they do not prove a hook is currently trending or guarantee performance.
-
-The purchased libraries are packaged inside the skill. Crafty Carousels does not open Notion, store Notion URLs, or require the original pages during client work.
+The local source library contains 751 source records: 300 paired hook/example records plus 351 categorized records and 100 hook starters. Crafty also embeds 7 script frameworks and 39 CTAs. The operator sees three to five candidates with stable IDs and format fit. It shows examples when the source supplied them. The selected pattern is adapted only with approved client evidence and voice. The databases are offline ideation sources. They do not prove a hook is currently trending or guarantee performance.
 
 ### 3. Carousel frameworks
 
@@ -261,7 +259,7 @@ Crafty Carousels uses the installed image generation capability for GPT Image 2 
 ### Codex or ChatGPT desktop
 
 ```powershell
-codex plugin marketplace add plotdevice01/crafty-carousels-skill --ref v0.5.0
+codex plugin marketplace add plotdevice01/crafty-carousels-skill --ref v0.6.0
 codex plugin add crafty-carousels@crafty-carousels-skill
 ```
 
@@ -303,8 +301,8 @@ Mutable platform limits still require release-time verification. The repository 
 
 ## Versioning
 
-- **Release tag:** the package teammates install, such as `v0.5.0`.
-- **Plugin manifest:** host-facing package metadata, such as `0.5.0`.
+- **Release tag:** the package teammates install, such as `v0.6.0`.
+- **Plugin manifest:** host-facing package metadata, such as `0.6.0`.
 - **Skill workflow:** the production contract and client workspace templates inside that release.
 
 See [CHANGELOG.md](CHANGELOG.md) for release history.

@@ -42,6 +42,14 @@ Then create a run. Eight slides is the default, not a platform limit.
 python scripts/new_carousel_project.py new-run --workspace "C:\work\example-carousel" --slug "one-sharp-idea" --route instagram-native --slide-count 8
 ```
 
+When Brand Voice Factory supplied the approved client voice, import its sealed package before creating a run:
+
+```powershell
+python scripts/import_brand_voice.py import --manifest "C:\client\stages\04_package\output\package-manifest.json" --workspace "C:\work\example-carousel"
+```
+
+The importer verifies the client ID, approval status, file paths, and hashes. It copies the approved package into the Crafty workspace. It maps claim and asset rows without pretending missing Crafty controls were approved.
+
 Ask for one missing blocking decision at a time. Mark non-blocking gaps `UNKNOWN`. Never fill them from memory or another client.
 
 Before the first run, complete `setup/client-intake.md`. Save stable visual rules in `_shared/brand.md`, stable writing rules in `_shared/voice.md`, and approved people plus likeness rules in `_shared/people-and-likeness.md`. Register every usable file in `_shared/asset-register.csv`. Keep actual client media in the private `_shared/media/` directory created by the stamping script. Record proof claims in `_shared/claim-register.csv`.
@@ -56,9 +64,9 @@ Do not write proof claims from an inspiration image. A visual reference is not e
 
 ### 2. Strategy and copy
 
-Choose and record one copy mode before design: `exact-source` for visual-only comparisons or `approved-draft` for copy-and-design work. Never rewrite, shorten, expand, or add explainer text in `exact-source` mode. Freeze approved `copy.md` with SHA-256 before image production. Select the narrative format that fits the insight: comparison, tutorial, native personal lesson, story arc, or an explicitly approved custom format.
+Choose and record one copy mode before design: `exact-source` for visual-only comparisons or `approved-draft` for copy-and-design work. In `exact-source` mode, preserve the supplied copy without expansion or explainer text. Freeze approved `copy.md` with SHA-256 before image production. Select the narrative format that fits the insight. Supported formats include comparison and tutorial, plus a native personal lesson or story arc. Use a custom format only when explicitly approved.
 
-For `approved-draft`, query only the recorded content class and hook-research format in the bundled 751-record source library. Show three to five patterns with source-supplied examples when available, stable IDs, and format fit. Never invent an example when the source did not provide one. Adapt with approved client evidence and voice, then record the selected IDs. When useful, query the installed 7-script and 39-CTA library; do not recreate those records from memory. Never describe a library pattern as currently trending without current research evidence. For `exact-source`, preserve the supplied hook and do not substitute a library entry.
+For `approved-draft`, query only the recorded content class and hook-research format in the bundled 751-record source library. Show three to five patterns with stable IDs and format fit. Include source-supplied examples when available. Never invent an example when the source did not provide one. Adapt with approved client evidence and voice, then record the selected IDs. When useful, query the installed 7-script and 39-CTA library; do not recreate those records from memory. Never describe a library pattern as currently trending without current research evidence. For `exact-source`, preserve the supplied hook and do not substitute a library entry.
 
 Write the full carousel before generating images. Default to the smallest slide count that carries the idea. Use eight when the idea benefits from the complete sequence:
 
@@ -81,7 +89,7 @@ Stop for human approval of strategy and exact copy before generating a full caro
 
 Select two to four references and assign each one job. Generate exactly three distinct cover candidates with the exact approved copy. Do not substitute color swaps for different compositions. Compare all three at 320 pixels wide. Select one direction. Refine it until hierarchy and brand fit pass. Legibility and curiosity must pass too.
 
-The approved cover is the visual anchor. Record all three files, their SHA-256 values, the selected candidate, and the SHA-256 of `visual-brief.md`. Do not generate the remaining carousel until the human gate records anchor approval and validation passes.
+The approved cover is the visual anchor. Record all three files and their SHA-256 values. Record the selected candidate and the SHA-256 of `visual-brief.md`. Do not generate the remaining carousel until the human gate records anchor approval and validation passes.
 
 ### 4. Slide production
 
@@ -95,7 +103,7 @@ Generate or edit one slide at a time from the approved anchor. For each slide, p
 
 After each result, inspect the image. Reject misspelled or missing text. Reject weak contrast and style drift. Reject unsafe cropping or repeated visuals. Reject false logos and unsupported depictions. Fix the current slide before moving on.
 
-Use one locked, wide, heavy, high-x-height type family for headline, supporting copy, and CTA unless the approved brand system explicitly requires another family. On 1080 by 1350 slides, enforce minimum rendered sizes of 68 pixels for headlines, 40 pixels for supporting copy, and 48 pixels for CTAs, all at weight 800 or heavier. Inspect at 320 pixels wide. Never place text on a glow, flare, colored haze, gradient hotspot, face, head, body, hand, or primary object. Keep CTAs above bottom crop and interface-safe zones. Do not add shapes, arrows, symbols, fake UI, stray characters, or explainer copy that is absent from the approved copy.
+Use one locked type family unless the approved brand system requires another. It must be wide with a high x-height and heavy weight. Apply it to every text role. On 1080 by 1350 slides, headlines must render at 68 pixels or larger. Supporting copy must be at least 40 pixels, and CTAs must be at least 48 pixels. Use weight 800 or heavier and inspect at 320 pixels wide. Never place text on a glow or flare. Avoid colored haze and gradient hotspots. Keep text off people and primary objects. Keep CTAs above bottom crop and interface-safe zones. Do not add shapes or arrows. Do not add symbols or fake UI. Reject stray characters. Do not add explainer copy that is absent from the approved copy.
 
 For a personal brand requiring strong identity fidelity, prefer an approved real-photo composite over a generated avatar. Use the image model for the background, environment, lighting plate, or non-identity elements, then preserve the approved person's real face and body asset. Record `approved-real-photo-composite`, `approved-ai-likeness`, or `not-applicable` in the run before production.
 

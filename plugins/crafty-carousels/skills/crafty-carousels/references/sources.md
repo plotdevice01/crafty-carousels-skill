@@ -22,8 +22,6 @@ These sources support the copy-first and anchor-first workflow. They also suppor
 
 ## Hook-format research sources
 
-- Purchased TikTok Hook Library offline snapshot, imported 2026-08-05 from owner-provided Gumroad subscription access.
-- Purchased Personal Brand Launch scripts, hooks, and CTA library offline snapshot, imported 2026-08-05 from owner-provided Gumroad subscription access.
 - TikTok for Business 2026 Creative Starter Pack: https://ads.tiktok.com/business/library/AUNZ_Creative_Starter_Pack_TakeItToTikTok.pdf
 - TikTok creative advertising guide: https://ads.tiktok.com/business/en/guides/what-is-ad-creative-guide
 - Instagram carousel publishing behavior: https://www.facebook.com/help/instagram/269314186824048
@@ -33,6 +31,6 @@ TikTok's official guidance treats sound, motion, people, and the first seconds a
 
 ## User-supplied working sources
 
-The original build also reviewed a carousel Bible PDF and two Markdown guides. It reviewed design examples plus a ten-image production guide. Their reusable principles are represented in this skill. The paid hook, script, and CTA datasets required by production are bundled as structured offline records; the runtime never reopens their original Notion pages.
+The original build also reviewed a carousel Bible PDF and two Markdown guides. It reviewed design examples plus a ten-image production guide. Their reusable principles are represented in this skill. The hook, script, and CTA datasets required by production are bundled as structured offline records.
 
 User-supplied claims that conflict with current official documentation are labeled as heuristics or require a live route check.

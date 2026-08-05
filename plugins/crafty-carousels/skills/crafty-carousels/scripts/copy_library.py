@@ -32,24 +32,26 @@ def search(kind: str, category: str, needle: str) -> list[dict[str, object]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Query the offline Crafty Carousels script and CTA library.")
-    parser.add_argument("--type", choices=("script", "cta"), required=True)
+    parser.add_argument("--type", choices=("script", "cta"))
     parser.add_argument("--category", choices=("engagement", "follow", "sales"), default="")
     parser.add_argument("--search", default="")
     parser.add_argument("--count", type=int, default=5)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
-    if args.count < 1 or args.count > 39:
-        parser.error("--count must be between 1 and 39")
-    if args.type == "script" and args.category:
-        parser.error("--category applies only to CTA queries")
-    records = search(args.type, args.category, args.search)[: args.count]
     if args.self_test:
         payload = load_library()
         assert all(script["fields"] for script in payload["scripts"])
         assert all(search("cta", category, "") for category in ("engagement", "follow", "sales"))
         print("self_test=PASS scripts=7 ctas=39")
         return 0
+    if not args.type:
+        parser.error("--type is required")
+    if args.count < 1 or args.count > 39:
+        parser.error("--count must be between 1 and 39")
+    if args.type == "script" and args.category:
+        parser.error("--category applies only to CTA queries")
+    records = search(args.type, args.category, args.search)[: args.count]
     if args.json:
         print(json.dumps(records, indent=2, ensure_ascii=False))
         return 0

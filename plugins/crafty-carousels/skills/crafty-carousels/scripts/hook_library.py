@@ -59,16 +59,13 @@ def query(content_class: str, content_format: str, search: str, count: int) -> l
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Query Crafty Carousels hooks by client class and format fit.")
-    parser.add_argument("--content-class", choices=CONTENT_CLASSES, required=True)
+    parser.add_argument("--content-class", choices=CONTENT_CLASSES)
     parser.add_argument("--format", choices=FORMATS, default="image_carousel")
     parser.add_argument("--search", default="")
     parser.add_argument("--count", type=int, default=5)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
-    if args.count < 1 or args.count > 751:
-        parser.error("--count must be between 1 and 751")
-    records = query(args.content_class, args.format, args.search, args.count)
     if args.self_test:
         all_records = load_records()
         assert len(all_records) == 751
@@ -76,6 +73,11 @@ def main() -> int:
         assert all(record["hook"] for record in all_records)
         print("self_test=PASS records=751")
         return 0
+    if not args.content_class:
+        parser.error("--content-class is required")
+    if args.count < 1 or args.count > 751:
+        parser.error("--count must be between 1 and 751")
+    records = query(args.content_class, args.format, args.search, args.count)
     if args.json:
         print(json.dumps(records, indent=2, ensure_ascii=False))
         return 0

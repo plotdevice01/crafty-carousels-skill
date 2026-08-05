@@ -25,6 +25,7 @@ REQUIRED = (
     "scripts/new_carousel_project.py",
     "scripts/hook_library.py",
     "scripts/copy_library.py",
+    "scripts/import_brand_voice.py",
     "assets/hook-library/viral-hooks-300.json",
     "assets/hook-library/notion-tiktok-hooks-351.json",
     "assets/hook-library/personal-brand-hooks-100.json",
@@ -79,7 +80,7 @@ def main() -> int:
 
     hook_script = SKILL / "scripts" / "hook_library.py"
     hook_result = subprocess.run(
-        [sys.executable, str(hook_script), "--content-class", "business", "--self-test"],
+        [sys.executable, str(hook_script), "--self-test"],
         check=True,
         capture_output=True,
         text=True,
@@ -88,12 +89,21 @@ def main() -> int:
 
     copy_script = SKILL / "scripts" / "copy_library.py"
     copy_result = subprocess.run(
-        [sys.executable, str(copy_script), "--type", "script", "--self-test"],
+        [sys.executable, str(copy_script), "--self-test"],
         check=True,
         capture_output=True,
         text=True,
     )
     assert "self_test=PASS" in copy_result.stdout
+
+    import_script = SKILL / "scripts" / "import_brand_voice.py"
+    import_result = subprocess.run(
+        [sys.executable, str(import_script), "self-test"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "self_test=PASS" in import_result.stdout
 
     with tempfile.TemporaryDirectory() as folder:
         workspace = Path(folder) / "workspace"
