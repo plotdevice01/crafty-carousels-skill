@@ -6,7 +6,13 @@
 [![Validate](https://github.com/plotdevice01/crafty-carousels-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/plotdevice01/crafty-carousels-skill/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/plotdevice01/crafty-carousels-skill)](LICENSE)
 
-Crafty Carousels turns one approved idea into a controlled Instagram or LinkedIn carousel package. It handles intake, exact copy, three required cover directions, visual production, mobile QA, rights checks, release approval, and measurement records.
+Crafty Carousels is the independently maintained source product for Chief's
+carousel workflow. Chief pins release `0.6.1` and loads it only when a request
+needs carousel research or production. Ordinary teammates do not install or
+select Crafty separately; they install Chief and ask for the carousel they
+need. This repository remains public for maintainers and direct development.
+
+The workflow turns one approved idea into a controlled Instagram or LinkedIn carousel package. It handles intake, exact copy, three required cover directions, visual production, mobile QA, rights checks, release approval, and measurement records.
 
 It is designed for repeatable quality. It does not promise virality.
 
@@ -254,24 +260,44 @@ Change one major variable per experiment when practical. Preserve the same core 
 
 Crafty Carousels uses the installed image generation capability for GPT Image 2 or the current approved image model. The skill controls briefs, references, approvals, prompts, hashes, and QA. It does not embed a private API key or lock the team to an obsolete model wrapper.
 
-## Install for a team
+## Normal team use
 
-### Codex or ChatGPT desktop
+After OpenAI publishes Chief in the public Plugins Directory:
+
+1. Open ChatGPT and switch to **Work**.
+2. Open **Plugins** and find **Chief of Staff**.
+3. Click **+**.
+4. Start a new chat and ask Chief for the carousel.
+
+No terminal or Git is required. Teammates do not need Python or a skill name.
+They do not install AI Sloppy Copy or Crafty separately. A workspace admin can
+also make Chief available to required roles.
+
+Chief coordinates intake and uses every compatible record in the pinned
+libraries. It enforces the anchor and approval gates. It runs final validation,
+then reports what actually ran.
+
+## Direct Codex development only
+
+Maintainers testing Crafty independently may install the upstream package:
 
 ```powershell
 codex plugin marketplace add plotdevice01/crafty-carousels-skill --ref v0.6.1
 codex plugin add crafty-carousels@crafty-carousels-skill
 ```
 
-Restart the app or begin a new task, then invoke `$crafty-carousels`.
-
-Pinning the release tag keeps every teammate on the same ruleset. This public repository is a team distribution source. It is not automatically a listing in OpenAI's universal plugin directory.
+Restart Codex or begin a new task, then invoke `$crafty-carousels`. This direct
+route is for maintenance and regression work, not normal teammate use. This
+repository is not a separate submission target for OpenAI's universal Plugins
+Directory.
 
 ## Required companion
 
-Final copy and release require the AI Sloppy Copy plugin. If it is missing, Crafty Carousels may prepare internal drafts but must block final copy approval and release.
+Final copy and release require the pinned AI Sloppy Copy runtime. Chief bundles
+both runtimes and fails closed if the required validator is unavailable.
 
-Chief of Staff is optional. When installed, Chief can coordinate intake and stage status. It can also coordinate approvals and client handoff. Crafty Carousels works by itself through its saved workspace contracts.
+Chief of Staff is the required team front door. Crafty can run independently
+only for maintainers testing its saved workspace contracts.
 
 ## Start a client workspace
 
@@ -301,7 +327,7 @@ Mutable platform limits still require release-time verification. The repository 
 
 ## Versioning
 
-- **Release tag:** the package teammates install, such as `v0.6.1`.
+- **Release tag:** the upstream package Chief pins or maintainers install directly, such as `v0.6.1`.
 - **Plugin manifest:** host-facing package metadata, such as `0.6.1`.
 - **Skill workflow:** the production contract and client workspace templates inside that release.
 
